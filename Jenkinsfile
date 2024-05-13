@@ -26,9 +26,9 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
-    post {
+   /* post {
         success {
             emailext (
                 subject: "Notification de build Jenkins - Succès",
