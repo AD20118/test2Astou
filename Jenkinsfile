@@ -10,11 +10,11 @@ pipeline {
             steps {
                 script {
                     bat 'docker --version'
-                   // bat "docker-compose up -d --build"
+                    bat "docker-compose up -d --build"
                 }
             }
         }
-        stage("deploy to Kubernetes") {
+       /* stage("deploy to Kubernetes") {
             steps {
                 withCredentials([file(credentialsId: 'testkubernate', variable: 'KUBECONFIG')]) {
                     script {
@@ -43,5 +43,5 @@ pipeline {
                 to: "sambasy837@email.com",
             )
         }
-    }
+    }*/
 }
