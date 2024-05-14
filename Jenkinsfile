@@ -14,9 +14,9 @@ pipeline {
                 }
             }
         }
-       /* stage("deploy to Kubernetes") {
+       stage("deploy to Kubernetes") {
             steps {
-                withCredentials([file(credentialsId: 'testkubernate', variable: 'KUBECONFIG')]) {
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
                     script {
                         // Déployer sur Kubernetes
                         bat "kubectl apply -f kubernetes/bd-deployer.yaml --kubeconfig=${KUBECONFIG} --validate=false"
@@ -26,22 +26,22 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
     }
-   /* post {
-        success {
-            emailext (
-                subject: "Notification de build Jenkins - Succès",
-                body: "Le build de votre pipeline Jenkins s'est terminé avec succès.",
-                to: "sambasy837@gmail.com",
-            )
-        }
-        failure {
-            emailext (
-                subject: "Notification de build Jenkins - Échec",
-                body: "Le build de votre pipeline Jenkins a échoué.",
-                to: "sambasy837@email.com",
-            )
-        }
-    }*/
+   // post {
+   //      success {
+   //          emailext (
+   //              subject: "Notification de build Jenkins - Succès",
+   //              body: "Le build de votre pipeline Jenkins s'est terminé avec succès.",
+   //              to: "sambasy837@gmail.com",
+   //          )
+   //      }
+   //      failure {
+   //          emailext (
+   //              subject: "Notification de build Jenkins - Échec",
+   //              body: "Le build de votre pipeline Jenkins a échoué.",
+   //              to: "sambasy837@email.com",
+   //          )
+   //      }
+   //  }
 }
